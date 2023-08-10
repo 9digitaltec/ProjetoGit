@@ -1,0 +1,160 @@
+Git / Github 
+
+Git:Ferramenta de versionalmento de arquivos
+Github: Plataforma para hospedagem dos arquivos
+
+Fork(fica em cima do lado direito) - você pode roubar o código, pode puxar para seu perfil
+Start - pode deixar uma estrela se gostou
+
+Branche- uma ramificação que vai fazer no projeto.
+Você pode criar uma ramificação apartir do projeto principal.
+Ex: Você pegou um projeto de alguém e apartir dele vai fazer novo implementações manter um fonte estático ou seja uma pasta original
+
+na maquina eu dou o commit, mas para subir para o github eu preicos dar o push remote
+o pull é o contrátio. puxa o que tem no repositório para máquina
+
+
+-------------------------------------------------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=UBAX-13g8OM
+
+Instalando Git:
+https://git-scm.com/download/win
+
+baixar, instalar é só avançar
+
+Ao abrir ver se está tudo certo, só ver se aparece a versão digitando 
+git --version (se aparece versão está ok)
+
+----------------------------------------------------------------------------------------------------------------------------
+Criando:
+
+Ao criar uma pasta em qualquer lugar do pc, eu coloco arquivos dentro e na própria pasta click com o direito escolhendo a opção "Git bash here"
+
+git init - será inicializado um repositório vazio
+           Dentro da pasta será criado automaticamente uma pasta .git que vai ter todas as configurações de manipulação do git (não apagar)
+
+git add - manda os arquivos para área de stage(area aguardando para entrar no palco)  
+git add Readme.md
+
+git status - (vai ver os arquivos que estão na stage após add)
+git commit -m "Teste inicial"
+git status
+
+se quiser renomear a branche que está master:
+git branch -M "main"
+----------------------------------------------------------------------------------------------------------------------------
+Dica de colagem usar insert ou ctrt+shif+v no bash pq ctrl v sozinho não funciona
+----------------------------------------------------------------------------------------------------------------------------
+Vou lá no git na web log e crio um novo repositório
+-add nome
+-Descrição opcional
+-E se quero que seja public ou privado
+-não precisa checar mais nada e create repository
+logo em seguida vai aparecer os comandos que precisa execurar no bash, vai ser tipo:
+
+git remote add origin https://github.com/9digitaltec/ProjetoGit.git
+git branch -M main
+git push -u origin main
+
+Lembrando que precisa estar no caminho da pasta, se não tiver vai dar erro, é só ir em cima da pasta e clicar com direito e bash q já abre certo
+vai abrir uma tela e pedir a senha do github, vai autorizar e aparecer na plataforma
+os arquivos readme.md sempre vão aparecer aberto já na plataforma interessante, pode deixar instruções de funcionamento etc
+(neste momento que é enviado da máquina para origin pode se dizer web, main branche principal q estou querendo enviar)
+----------------------------------------------------------------------------------------------------------------------------
+Alterações:
+bash: clear
+git add . (significa que eu quero enviar todos arquivos da pasta para area de stage)
+git status
+git commit -m "alteração arquivo"
+git push origin main  *************não precisa do remote agora, pq já tem uma conexão criada, só repositório e nome da branche***************
+
+-------------------------------------------
+Subir GITHUB(remoto):
+git push origin main  -- ao fazer este comando se tiver em outra branch ele atualiza mais não sobe na pq esta identico
+Se não tiver criado a branch ele cria automaticamente, pq já local esta criado:
+git pull origin 20230810
+Sucesso!
+-------------------------------------------
+Excluir repositório:
+https://docs.github.com/pt/repositories/creating-and-managing-repositories/deleting-a-repository
+
+-------------------------------------------
+git remote add origin https://github.com/9digitaltec/LSDistribuidor.git
+
+
+*****************************************************************************
+07-08-2023
+(atenção case sensitive, cuida nomes pastas)
+Criei um diretorio local assim: 
+C:\GitProjetos\LS Distribuidor\2023.0801.02
+
+git init dentro de: C:\GitProjetos\LS Distribuidor
+
+na sequencia:
+git add "2023.0801.02" (não subir o nome do prj no github ja tem)
+git commit -m "Inicio"
+Até aqui somente local
+
+Vou lá no git na web log e crio um novo repositório, lá mesmo já vai ter os comandos iniciais
+git remote add origin https://github.com/9digitaltec/LSDistribuidor.git
+git push -u origin master
+
+**Importante ele sobe todas as pastas deste onde esta o .git oculto
+então solução ao iniciar usar o init já dentro do projeto que vai subir
+dentro da pasta C:\GitProjetos\LS Distribuidor
+usa o bash here
+
+Sucesso!
+*****************************************************************************
+Baixar um repositório:
+
+--dentro da pasta que você quer baixar, git clone mais o caminho lá do github
+git clone https://github.com/9digitaltec/ProjetoGit.git
+*****************************************************************************
+
+Branches
+https://www.hostinger.com.br/tutoriais/renomear-branch-git
+
+Criar remoto(melhor sempre criar local):
+https://learn.microsoft.com/pt-br/azure/devops/repos/git/create-branch?view=azure-devops&tabs=browser
+
+*****************************************************************************
+##Não vou usar assim vou criar uma nova pasta, desta forma não é visual a nova branch
+
+Criar Branch local
+https://pt.stackoverflow.com/questions/411048/como-criar-uma-nova-branch-no-github
+git branch MinhaNovaBrach  (git branch 2023.0807.03)  
+git branch -c branchEspecifica MinhaNovaBrach (git branch -c 2023.0801.02 2023.0807.03)
+--
+**git checkout -b MinhaNovaBrach (aponta para branch que vc quer) (git checkout -b 2023.0807.03)
+git fetch (atualiza a branch)
+git commit -m "Olha que commit lindo <3"
+git push -u origin MinhaNovaBrach (git push -u origin 2023.0807.03)
+
+Git revert
+git revert 3321844
+*****************************************************************************
+Ver as branches e em qual está apontando:
+git branch --list
+
+Trocar de branch:
+git checkout master
+
+Como excluir uma branch:
+git branch -d <nome-da-branch> (git branch -d teste)
+git branch -D <nome-da-branch>
+
+Após criado uma branch remoto para visualizar local
+git push
+
+Sucesso!
+*****************************************************************************
+Idéia depois da branch pronto no github eu baixo trabalho nela local e quando
+subir eu crio manual uma nova branche no github e faço merge, bem simples
+pelo github sem comandos
+
+Quando já tem uma branch master baixada ao fazer alterações criar uma branch
+novo local ou quando subir não subir na master, depois faz merge
+Sucesso!
+
+git branch -c master 2023.0808.03
