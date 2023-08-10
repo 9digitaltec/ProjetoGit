@@ -68,7 +68,12 @@ git status
 git commit -m "alteração arquivo"
 git push origin main  *************não precisa do remote agora, pq já tem uma conexão criada, só repositório e nome da branche***************
 
-
+-------------------------------------------
+Subir GITHUB(remoto):
+git push origin main  -- ao fazer este comando se tiver em outra branch ele atualiza mais não sobe na pq esta identico
+Se não tiver criado a branch ele cria automaticamente, pq já local esta criado:
+git push origin 20230810
+Sucesso!
 -------------------------------------------
 Excluir repositório:
 https://docs.github.com/pt/repositories/creating-and-managing-repositories/deleting-a-repository
