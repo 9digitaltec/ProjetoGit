@@ -72,7 +72,7 @@ git push origin main  *************não precisa do remote agora, pq já tem uma 
 Subir GITHUB(remoto):
 git push origin main  -- ao fazer este comando se tiver em outra branch ele atualiza mais não sobe na pq esta identico
 Se não tiver criado a branch ele cria automaticamente, pq já local esta criado:
-git push origin 20230810
+git pull origin 20230810
 Sucesso!
 -------------------------------------------
 Excluir repositório:
